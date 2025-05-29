@@ -16,21 +16,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) Checkout your repo
+      # 1) Check out your code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2) Set up Python
+      # 2) Set up Python (3.10 is supported on ubuntu-latest)
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.7'
+          python-version: '3.10'
 
       # 3) Install dependencies
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      # 4) Run your test script
+      # 4) Run your tests
       - name: Run test
         run: |
           cd code
